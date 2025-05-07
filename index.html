@@ -17,9 +17,21 @@
     <!-- Android / PWA -->
     <link rel="manifest" href="site.webmanifest">
 
-
     <style>
-            .nav-bar {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+            padding-top: 70px;
+        }
+
+        .nav-bar {
             position: fixed;
             top: 0;
             width: 100%;
@@ -32,37 +44,37 @@
             border-radius: 0 0 20px 20px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             z-index: 1000;
-            }
+        }
 
-            .nav-logo {
+        .nav-logo {
             height: 36px;
             margin-right: 20px;
-            }
+        }
 
-            .nav-menu {
+        .nav-menu {
             list-style: none;
             display: flex;
             gap: 24px;
             margin: 0;
             padding: 0;
-            }
+        }
 
-            .nav-menu li {
+        .nav-menu li {
             position: relative;
-            }
+        }
 
-            .nav-menu a {
+        .nav-menu a {
             text-decoration: none;
             font-weight: 500;
             color: #333;
             transition: color 0.2s ease;
-            }
+        }
 
-            .nav-menu a:hover {
-            color: #007aff; /* Apple blue */
-            }
+        .nav-menu a:hover {
+            color: #007aff;
+        }
 
-            .submenu {
+        .submenu {
             display: none;
             position: absolute;
             top: 40px;
@@ -72,50 +84,43 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
             padding: 10px 0;
             z-index: 1001;
-            }
+        }
 
-            .has-submenu:hover .submenu {
+        .has-submenu:hover .submenu {
             display: block;
-            }
+        }
 
-            .submenu li {
+        .submenu li {
             padding: 8px 20px;
             white-space: nowrap;
-            }
+        }
 
-            .submenu li a {
+        .submenu li a {
             color: #333;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-        body {
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        /* Header/Hero Section */
         .hero {
             background-color: #007bff;
             color: #fff;
             text-align: center;
             padding: 60px 20px;
         }
+
         .hero img {
             max-width: 300px;
             margin-bottom: 10px;
         }
+
         .hero h1 {
             font-size: 2.0em;
             margin-bottom: 10px;
         }
+
         .hero p {
             font-size: 1.2em;
             margin-bottom: 20px;
         }
+
         .hero a {
             display: inline-block;
             padding: 10px 20px;
@@ -125,84 +130,44 @@
             border-radius: 5px;
             font-weight: bold;
         }
+
         .hero a:hover {
             background-color: #e0e0e0;
         }
-        /* About Section */
-        .about {
+
+        .about, .features, .mvp, .contact {
             padding: 40px 20px;
             text-align: center;
         }
-        .about h2 {
+
+        .about h2, .features h2, .mvp h2, .contact h2 {
             font-size: 2em;
             margin-bottom: 20px;
         }
-        .about p {
+
+        .about p, .mvp p, .contact p {
             max-width: 800px;
-            margin: 0 auto 10px;
+            margin: 0 auto 20px;
             line-height: 1.6;
         }
-        /* Features Section */
-        .features {
-            background-color: #fff;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        .features h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
+
         .features ul {
             list-style: none;
             max-width: 800px;
             margin: 0 auto;
             text-align: left;
         }
+
         .features li {
             margin: 10px 0;
             font-size: 1.1em;
         }
-        /* MVP Section */
-        .mvp {
-            padding: 40px 20px;
-            text-align: center;
-        }
-        .mvp h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-        .mvp p {
-            max-width: 800px;
-            margin: 0 auto 20px;
-            line-height: 1.6;
-        }
-        .mvp a {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .mvp a:hover {
-            text-decoration: underline;
-        }
-        /* Contact Section */
-        .contact {
-            background-color: #fff;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        .contact h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-        .contact p {
-            max-width: 800px;
-            margin: 0 auto 20px;
-            line-height: 1.6;
-        }
+
         .contact form {
             max-width: 500px;
             margin: 0 auto;
         }
+
         .contact input, .contact textarea {
             width: 100%;
             padding: 10px;
@@ -211,6 +176,7 @@
             border-radius: 4px;
             font-size: 1em;
         }
+
         .contact button {
             padding: 10px 20px;
             background-color: #007bff;
@@ -220,10 +186,11 @@
             cursor: pointer;
             font-size: 1em;
         }
+
         .contact button:hover {
             background-color: #0056b3;
         }
-        /* Footer */
+
         footer {
             background-color: #333;
             color: #fff;
@@ -231,14 +198,16 @@
             padding: 20px;
             margin-top: 20px;
         }
+
         footer a {
             color: #fff;
             text-decoration: none;
         }
+
         footer a:hover {
             text-decoration: underline;
         }
-        /* Responsive Design */
+
         @media (max-width: 600px) {
             .hero h1 {
                 font-size: 1.8em;
@@ -251,26 +220,25 @@
             }
         }
     </style>
-
 </head>
 <body>
     <header class="nav-bar">
         <img src="Cube.png" alt="Logo" class="nav-logo">
         <nav>
-          <ul class="nav-menu">
-            <li><a href="#home">Home</a></li>
-            <li class="has-submenu">
-              <a href="#novexus">Novexus</a>
-              <ul class="submenu">
-                <li><a href="#klu">KLU</a></li>
-              </ul>
-            </li>
-          </ul>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li class="has-submenu">
+                    <a href="#novexus">Novexus</a>
+                    <ul class="submenu">
+                        <li><a href="#klu">KLU</a></li>
+                    </ul>
+                </li>
+            </ul>
         </nav>
-      </header>
+    </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <img src="Novexus.png" alt="Novexus-KLU Logo">
         <h1>KLU</h1>
         <p>Details coming soon.</p>
@@ -310,7 +278,6 @@
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
             <button type="submit">Submit</button>
-        </form>
         </form>
     </section>
 
