@@ -19,6 +19,74 @@
 
 
     <style>
+            .nav-bar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            padding: 0 30px;
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            }
+
+            .nav-logo {
+            height: 36px;
+            margin-right: 20px;
+            }
+
+            .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+            margin: 0;
+            padding: 0;
+            }
+
+            .nav-menu li {
+            position: relative;
+            }
+
+            .nav-menu a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #333;
+            transition: color 0.2s ease;
+            }
+
+            .nav-menu a:hover {
+            color: #007aff; /* Apple blue */
+            }
+
+            .submenu {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            padding: 10px 0;
+            z-index: 1001;
+            }
+
+            .has-submenu:hover .submenu {
+            display: block;
+            }
+
+            .submenu li {
+            padding: 8px 20px;
+            white-space: nowrap;
+            }
+
+            .submenu li a {
+            color: #333;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -186,6 +254,21 @@
 
 </head>
 <body>
+    <header class="nav-bar">
+        <img src="Cube.png" alt="Logo" class="nav-logo">
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li class="has-submenu">
+              <a href="#novexus">Novexus</a>
+              <ul class="submenu">
+                <li><a href="#klu">KLU</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
     <!-- Hero Section -->
     <section class="hero">
         <img src="Novexus.png" alt="Novexus-KLU Logo">
@@ -216,7 +299,6 @@
     <section class="mvp" id="mvp">
         <h2>Our MVP</h2>
         <p>Details coming soon.</p>
-        <p><a href="https://github.com/jwkos/Novexus-KLU">Check out our GitHub</a></p>
     </section>
 
     <!-- Contact Section -->
