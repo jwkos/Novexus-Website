@@ -46,8 +46,12 @@
         }
 
 
+        header.nav-bar {
+            width: 60px;
+        }
+
         header.nav-bar.expanded {
-            width: 320px; /* or whatever looks good */
+            width: 320px;
         }
 
         .nav-toggle {
@@ -69,7 +73,7 @@
             margin: auto 0;
         }
 
-        
+
         .nav-menu {
             display: flex;
             align-items: center;
@@ -99,7 +103,10 @@
             font-weight: 500;
             color: #333;
             font-size: 1em;
+            line-height: 60px; /* vertically center text */
+            display: inline-block;
         }
+
 
         .nav-menu a:hover {
             color: #007aff;
