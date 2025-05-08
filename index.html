@@ -33,16 +33,24 @@
         header.nav-bar {
             position: fixed;
             top: 20px;
-            left: 20px;
-            height: 60px;
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
             align-items: center;
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(20px);
             border-radius: 20px;
-            padding: 0 10px;
+            padding: 0 16px;
+            height: 60px;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
             z-index: 1000;
+            transition: width 0.4s ease;
+            width: 60px; /* collapsed */
+            overflow: hidden;
+        }
+
+        header.nav-bar.expanded {
+            width: 320px; /* or whatever looks good */
         }
 
         .nav-toggle {
@@ -57,19 +65,11 @@
         }
 
         .nav-menu {
-            position: fixed;
-            top: 20px;
-            left: 80px;
-            right: 20px;
-            height: 60px;
-            background: white;
-            border-radius: 20px;
-            display: none;
+            display: flex;
             align-items: center;
-            padding: 0 20px;
+            margin-left: 20px;
             gap: 24px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            animation: slideRight 0.3s ease forwards;
+            transition: opacity 0.3s ease;
         }
 
         .nav-menu.show {
@@ -126,7 +126,7 @@
         }
 
         .hero {
-            background: linear-gradient(145deg, #13263d, #223b57);
+            background: linear-gradient(145deg, #0f223a, #1e324d);
             color: #fff;
             text-align: center;
             position: relative;
@@ -246,8 +246,8 @@
     </style>
 </head>
 <body>
-    <header class="nav-bar">
-        <button class="nav-toggle" onclick="document.querySelector('.nav-menu').classList.toggle('show')">
+    <header class="nav-bar" id="navbar">
+        <button class="nav-toggle" onclick="document.getElementById('navbar').classList.toggle('expanded')">
             <img src="Cube.png" alt="Logo" class="nav-logo">
         </button>
         <ul class="nav-menu">
