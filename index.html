@@ -33,8 +33,7 @@
         header.nav-bar {
             position: fixed;
             top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 20px;
             display: flex;
             align-items: center;
             background: rgba(255, 255, 255, 0.9);
@@ -45,8 +44,6 @@
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
             z-index: 1000;
             transition: width 0.4s ease;
-            width: 60px; /* collapsed */
-            overflow: hidden;
         }
 
         header.nav-bar.expanded {
@@ -54,15 +51,27 @@
         }
 
         .nav-toggle {
-            background: none;
+            background: white;
             border: none;
+            border-radius: 16px;
+            height: 60px;
+            width: 60px;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
             cursor: pointer;
         }
 
+
         .nav-logo {
-            height: 36px;
-            transition: transform 0.3s ease;
+            height: 32px;
+            width: 32px;
+            display: block;
+            margin: auto 0;
         }
+
 
         .nav-menu {
             display: flex;
@@ -137,10 +146,18 @@
             content: '';
             position: absolute;
             inset: 0;
-            background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+            background:
+                linear-gradient(to right, rgba(255,255,255,0.07) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.07) 1px, transparent 1px);
             background-size: 40px 40px;
+            animation: gridWave 6s ease-in-out infinite alternate;
             z-index: 0;
             pointer-events: none;
+        }
+
+        @keyframes gridWave {
+            0% { background-position: 0 0; }
+            100% { background-position: 20px 40px; }
         }
 
         .hero * {
@@ -253,7 +270,7 @@
         <ul class="nav-menu">
             <li><a href="#home">Home</a></li>
             <li><a href="#novexus">Novexus</a></li>
-            <li><a href="#klu">KLU</a></li>
+            <li><a href="#other">Other</a></li>
         </ul>
     </header>
 
@@ -298,7 +315,7 @@
 
     <!-- Footer -->
     <footer>
-        <p><img src="Cube.png" alt="Novexus-KLU Trademark" style="width: 24px; vertical-align: middle; margin-right: 5px;"> © 2025 Novexus-KLU. All rights reserved. | <a href="https://github.com/jwkos/Novexus-KLU">GitHub</a></p>
+        <p><img src="Cube.png" alt="Novexus Trademark" style="width: 24px; vertical-align: middle; margin-right: 5px;"> © 2025 Novexus-KLU. All rights reserved. | <a href="https://github.com/jwkos/Novexus-KLU">GitHub</a></p>
     </footer>
 </body>
 </html>
