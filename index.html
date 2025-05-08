@@ -10,17 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Novexus</title>
 
-    <!-- High-resolution for modern browsers -->
-    <link rel="icon" type="image/png" sizes="192x192" href="Cube.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="Cube.png">
-
-    <!-- Fallback for legacy and Safari -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-    <!-- Apple devices -->
+    <!-- Chrome and general browsers -->
+    <link rel="icon" type="image/png" href="Cube.png" sizes="32x32">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-    <!-- Manifest for Android/Chrome -->
     <link rel="manifest" href="site.webmanifest">
 
     <style>
@@ -28,88 +21,108 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
             background-color: #f4f4f9;
             color: #333;
-            padding-top: 70px;
+            padding-top: 90px;
         }
 
-        .nav-bar {
+        header.nav-bar {
             position: fixed;
-            top: 0;
-            width: 100%;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            padding: 0 30px;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(20px);
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 0 0 20px 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            padding: 10px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
             z-index: 1000;
+        }
+
+        .nav-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
         }
 
         .nav-logo {
             height: 36px;
-            margin-right: 20px;
+            transition: transform 0.3s ease;
         }
 
         .nav-menu {
-            list-style: none;
+            position: absolute;
+            top: 70px;
+            left: 20px;
+            display: none;
+            flex-direction: column;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            padding: 20px;
+            animation: slideIn 0.3s ease forwards;
+        }
+
+        .nav-menu.show {
             display: flex;
-            gap: 24px;
-            margin: 0;
-            padding: 0;
         }
 
         .nav-menu li {
-            position: relative;
+            list-style: none;
+            margin-bottom: 12px;
         }
 
         .nav-menu a {
             text-decoration: none;
             font-weight: 500;
             color: #333;
-            transition: color 0.2s ease;
+            font-size: 1em;
         }
 
         .nav-menu a:hover {
             color: #007aff;
         }
 
-        .submenu {
-            display: none;
-            position: absolute;
-            top: 40px;
-            left: 0;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-            padding: 10px 0;
-            z-index: 1001;
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-10px); }
+            to { opacity: 1; transform: translateX(0); }
         }
 
-        .has-submenu:hover .submenu {
-            display: block;
+        section {
+            margin: 20px auto;
+            max-width: 900px;
+            padding: 40px 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
-        .submenu li {
-            padding: 8px 20px;
-            white-space: nowrap;
+        section:nth-of-type(even) {
+            background-color: #ffffff;
         }
 
-        .submenu li a {
-            color: #333;
+        section:nth-of-type(odd) {
+            background-color: #f0f0f0;
+        }
+
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        section p,
+        section ul {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            line-height: 1.6;
         }
 
         .hero {
             background-color: #007bff;
             color: #fff;
             text-align: center;
-            padding: 60px 20px;
         }
 
         .hero img {
@@ -118,7 +131,7 @@
         }
 
         .hero h1 {
-            font-size: 2.0em;
+            font-size: 2.5em;
             margin-bottom: 10px;
         }
 
@@ -133,7 +146,7 @@
             background-color: #fff;
             color: #007bff;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 10px;
             font-weight: bold;
         }
 
@@ -141,26 +154,9 @@
             background-color: #e0e0e0;
         }
 
-        .about, .features, .mvp, .contact {
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .about h2, .features h2, .mvp h2, .contact h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        .about p, .mvp p, .contact p {
-            max-width: 800px;
-            margin: 0 auto 20px;
-            line-height: 1.6;
-        }
-
         .features ul {
             list-style: none;
-            max-width: 800px;
-            margin: 0 auto;
+            padding-left: 0;
             text-align: left;
         }
 
@@ -179,7 +175,7 @@
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 10px;
             font-size: 1em;
         }
 
@@ -188,7 +184,7 @@
             background-color: #007bff;
             color: #fff;
             border: none;
-            border-radius: 4px;
+            border-radius: 10px;
             cursor: pointer;
             font-size: 1em;
         }
@@ -198,15 +194,18 @@
         }
 
         footer {
-            background-color: #333;
-            color: #fff;
+            background-color: #fff;
+            color: #333;
             text-align: center;
             padding: 20px;
-            margin-top: 20px;
+            border-radius: 20px;
+            margin: 20px auto;
+            max-width: 900px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
         footer a {
-            color: #fff;
+            color: #007aff;
             text-decoration: none;
         }
 
@@ -215,13 +214,7 @@
         }
 
         @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 1.8em;
-            }
-            .hero p {
-                font-size: 1em;
-            }
-            .about h2, .features h2, .mvp h2, .contact h2 {
+            section h2 {
                 font-size: 1.5em;
             }
         }
@@ -229,18 +222,14 @@
 </head>
 <body>
     <header class="nav-bar">
-        <img src="Cube.png" alt="Logo" class="nav-logo">
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li class="has-submenu">
-                    <a href="#novexus">Novexus</a>
-                    <ul class="submenu">
-                        <li><a href="#klu">KLU</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-menu').classList.toggle('show')">
+            <img src="Cube.png" alt="Logo" class="nav-logo">
+        </button>
+        <ul class="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#novexus">Novexus</a></li>
+            <li><a href="#klu">KLU</a></li>
+        </ul>
     </header>
 
     <!-- Hero Section -->
@@ -252,7 +241,7 @@
     </section>
 
     <!-- About Section -->
-    <section class="about">
+    <section class="about" id="novexus">
         <h2>About Us</h2>
         <p>Novexus is a forward-thinking software company building advanced design and automation tools. Our mission is to unlock a smarter future for physical product development through clean, intuitive software. We specialize in modular, constraint-driven systems that empower users to move seamlessly from concept to creation — no matter their background or technical level.</p>
         <p>More information coming soon.</p>
