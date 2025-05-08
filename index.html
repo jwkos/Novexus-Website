@@ -34,20 +34,17 @@
             position: fixed;
             top: 20px;
             left: 20px;
+            height: 60px;
             display: flex;
             align-items: center;
             background: white;
             border-radius: 20px;
-            padding: 0 20px;
-            height: 60px;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
             z-index: 1000;
-            transition: width 0.4s ease;
-        }
-
-
-        header.nav-bar {
-            width: 60px;
+            padding: 0 16px;
+            width: 60px; /* collapsed width */
+            overflow: hidden;
+            transition: width 0.3s ease;
         }
 
         header.nav-bar.expanded {
@@ -55,24 +52,23 @@
         }
 
         .nav-toggle {
-            background: transparent;
+            background: none;
             border: none;
             padding: 0;
-            height: 60px;
-            width: auto;
+            height: 100%;
+            width: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
         }
 
+
         .nav-logo {
             height: 32px;
             width: 32px;
             display: block;
-            margin: auto 0;
         }
-
 
         .nav-menu {
             display: flex;
