@@ -135,13 +135,14 @@
             position: relative;
             overflow: hidden;
         }
+
         .hero-inner {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 60px 20px;
-            gap: 20px;
+            padding: 30px 20px;
+            gap: 24px;
         }
 
         .hero::before {
@@ -168,16 +169,15 @@
         }
 
         .logo-halo {
-            display: inline-block;
-            padding: 12px 24px;
-            border-radius: 40px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
-            backdrop-filter: blur(6px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.04));
+            backdrop-filter: blur(4px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
         }
-
-
 
         .klu-highlight {
             position: relative;
@@ -193,12 +193,12 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 400px;
-            height: 400px;
-            margin-left: -200px;
-            margin-top: -200px;
+            width: 300px;
+            height: 300px;
+            margin-left: -150px;
+            margin-top: -150px;
             pointer-events: none;
-            background: radial-gradient(circle at center, rgba(255,255,255,0.18), transparent 80%);
+            background: radial-gradient(circle at center, rgba(255,255,255,0.2), transparent 80%);
             opacity: 0;
             transition: opacity 0.2s ease;
             z-index: 0;
@@ -374,21 +374,18 @@
     </footer>
 
     <script>
-        const hero = document.querySelector('.hero');
         const klu = document.querySelector('.klu-highlight');
 
-        hero.addEventListener('mousemove', e => {
-            const rect = hero.getBoundingClientRect();
+        klu.addEventListener('mousemove', e => {
+            const rect = klu.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-
-            // Set local vars on klu-highlight
             klu.style.setProperty('--x', `${x}px`);
             klu.style.setProperty('--y', `${y}px`);
             klu.classList.add('active');
         });
 
-        hero.addEventListener('mouseleave', () => {
+        klu.addEventListener('mouseleave', () => {
             klu.classList.remove('active');
             klu.style.removeProperty('--x');
             klu.style.removeProperty('--y');
