@@ -172,11 +172,11 @@
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            padding: 4px 12px;
+            padding: 6px 16px;
             border-radius: 20px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.04));
-            backdrop-filter: blur(4px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            background: radial-gradient(circle at center, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.1));
+            backdrop-filter: blur(6px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
 
         .klu-highlight {
@@ -382,19 +382,23 @@
     <script>
         const klu = document.querySelector('.klu-highlight');
 
-        klu.addEventListener('mousemove', e => {
+        function updateLight(e) {
             const rect = klu.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
             klu.style.setProperty('--x', `${x}px`);
             klu.style.setProperty('--y', `${y}px`);
+        }
+
+        klu.addEventListener('mouseenter', () => {
             klu.classList.add('active');
         });
 
+        klu.addEventListener('mousemove', updateLight);
+
         klu.addEventListener('mouseleave', () => {
             klu.classList.remove('active');
-            klu.style.removeProperty('--x');
-            klu.style.removeProperty('--y');
+            // Don’t reset x/y — leave them alone to avoid jump glitch
         });
     </script>
 
