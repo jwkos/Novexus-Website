@@ -191,17 +191,17 @@
         .klu-highlight::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 300px;
-            height: 300px;
-            margin-left: -150px;
-            margin-top: -150px;
+            top: var(--y, 50%);
+            left: var(--x, 50%);
+            width: 140px;
+            height: 140px;
+            transform: translate(-50%, -50%);
             pointer-events: none;
-            background: radial-gradient(circle at center, rgba(255,255,255,0.2), transparent 80%);
+            background: radial-gradient(circle, rgba(255,255,255,0.25) 0%, transparent 60%);
             opacity: 0;
             transition: opacity 0.2s ease;
             z-index: 0;
+            border-radius: 50%;
         }
 
         .klu-highlight.active::before {
@@ -307,6 +307,12 @@
                 font-size: 1.5em;
             }
         }
+        .novexus-logo {
+            max-height: 48px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
     </style>
 </head>
 <body>
@@ -325,7 +331,7 @@
     <section class="hero" id="home">
         <div class="hero-inner">
             <div class="logo-halo">
-                <img src="Novexus.png" alt="Novexus-KLU Logo">
+                <img src="Novexus_cropped_icon.png" alt="Novexus-KLU Logo" class="novexus-logo">
             </div>
             <div class="klu-highlight">
                 <h1>KLU</h1>
