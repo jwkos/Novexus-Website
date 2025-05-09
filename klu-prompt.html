@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Submit a Prompt – Novexus</title>
+  <link rel="icon" href="Cube.png" />
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 90px 20px 40px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 1em;
+    }
+
+    input[type="file"] {
+      padding: 10px;
+    }
+
+    button {
+      padding: 12px 24px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Share Your Design Prompt</h1>
+    <p>How would you tell an AI like KLU to design something? Describe it your way — and optionally upload a sketch or reference file. This helps us improve how KLU understands real-world prompts.</p>
+    <form action="https://formspree.io/f/xbloyrag" method="POST" enctype="multipart/form-data">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="prompt" rows="5" placeholder="Describe your design idea or how you'd prompt KLU..." required></textarea>
+      <input type="file" name="attachment" accept=".png,.jpg,.jpeg,.pdf,.svg,.webp,.heic" />
+      <button type="submit">Submit Prompt</button>
+    </form>
+  </div>
+  <footer>
+    <p>© 2025 Novexus. Thank you for helping us build something smarter.</p>
+  </footer>
+</body>
+</html>
