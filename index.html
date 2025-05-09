@@ -10,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Novexus</title>
 
-    <!-- Chrome and general browsers -->
     <link rel="icon" type="image/png" href="Cube.png" sizes="32x32">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -37,12 +36,13 @@
             height: 60px;
             display: flex;
             align-items: center;
-            background: white;
+            background: linear-gradient(135deg, rgba(245,245,245,0.7), rgba(220,220,220,0.6));
+            backdrop-filter: blur(12px);
             border-radius: 20px;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
             z-index: 1000;
             padding: 0 16px;
-            width: 60px; /* collapsed width */
+            width: 60px;
             overflow: hidden;
             transition: width 0.3s ease;
         }
@@ -63,7 +63,6 @@
             cursor: pointer;
         }
 
-
         .nav-logo {
             height: 32px;
             width: 32px;
@@ -74,24 +73,18 @@
             display: flex;
             align-items: center;
             margin-left: 20px;
-            gap: 24px;
+            gap: 32px;
             transition: opacity 0.3s ease;
-            padding: 0 4px;
-            line-height: 60px;
+            padding-left: 12px;
+            opacity: 0;
         }
 
-        .nav-menu.show {
-            display: flex;
-        }
-
-        @keyframes slideRight {
-            from { transform: translateX(-20px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
+        header.nav-bar.expanded .nav-menu {
+            opacity: 1;
         }
 
         .nav-menu li {
             list-style: none;
-            margin-bottom: 12px;
         }
 
         .nav-menu a {
@@ -99,10 +92,9 @@
             font-weight: 500;
             color: #333;
             font-size: 1em;
-            line-height: 60px; /* vertically center text */
+            line-height: 60px;
             display: inline-block;
         }
-
 
         .nav-menu a:hover {
             color: #007aff;
@@ -165,6 +157,39 @@
         .hero * {
             position: relative;
             z-index: 1;
+        }
+
+        .logo-halo {
+            display: inline-block;
+            padding: 24px 40px;
+            border-radius: 80px;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.08), transparent 80%);
+            backdrop-filter: blur(6px);
+        }
+
+        .klu-highlight {
+            position: relative;
+            display: inline-block;
+            padding: 40px 60px;
+            border-radius: 60px;
+            transition: background 0.3s ease;
+        }
+
+        .klu-highlight::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            left: -20%;
+            width: 140%;
+            height: 140%;
+            pointer-events: none;
+            border-radius: 60px;
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255,255,255,0.08), transparent 60%);
+            transition: background 0.3s ease;
+        }
+
+        .klu-highlight:hover::before {
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255,255,255,0.15), transparent 70%);
         }
 
         .hero img {
@@ -278,10 +303,14 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <img src="Novexus.png" alt="Novexus-KLU Logo">
-        <h1>KLU</h1>
-        <p>Details coming soon.</p>
-        <a href="#mvp">Learn More</a>
+        <div class="logo-halo">
+            <img src="Novexus.png" alt="Novexus-KLU Logo">
+        </div>
+        <div class="klu-highlight">
+            <h1>KLU</h1>
+            <p>Details coming soon.</p>
+            <a href="#mvp">Learn More</a>
+        </div>
     </section>
 
     <!-- About Section -->
@@ -319,5 +348,18 @@
     <footer>
         <p><img src="Cube.png" alt="Novexus Trademark" style="width: 24px; vertical-align: middle; margin-right: 5px;"> © 2025 Novexus. All rights reserved. | <a href="https://github.com/jwkos/Novexus-KLU">GitHub</a></p>
     </footer>
+
+    <script>
+        const hero = document.querySelector('.hero');
+        const klu = document.querySelector('.klu-highlight');
+
+        klu.addEventListener('mousemove', e => {
+            const rect = klu.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            hero.style.setProperty('--x', `${x}%`);
+            hero.style.setProperty('--y', `${y}%`);
+        });
+    </script>
 </body>
 </html>
