@@ -161,11 +161,14 @@
 
         .logo-halo {
             display: inline-block;
-            padding: 24px 40px;
-            border-radius: 80px;
-            background: radial-gradient(circle at center, rgba(255,255,255,0.08), transparent 80%);
-            backdrop-filter: blur(6px);
+            padding: 16px 28px;
+            border-radius: 40px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.05));
+            backdrop-filter: blur(8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
+
 
         .klu-highlight {
             position: relative;
@@ -173,19 +176,25 @@
             padding: 40px 60px;
             border-radius: 60px;
             transition: background 0.3s ease;
+            z-index: 2;
         }
 
         .klu-highlight::before {
             content: '';
             position: absolute;
-            top: -20%;
-            left: -20%;
-            width: 140%;
-            height: 140%;
+            top: -200px;
+            left: -200px;
+            width: 600px;
+            height: 600px;
             pointer-events: none;
-            border-radius: 60px;
-            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255,255,255,0.08), transparent 60%);
-            transition: background 0.3s ease;
+            border-radius: 50%;
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255,255,255,0.10), transparent 80%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .klu-highlight.active::before {
+            opacity: 1;
         }
 
         .klu-highlight:hover::before {
@@ -352,14 +361,23 @@
     <script>
         const hero = document.querySelector('.hero');
         const klu = document.querySelector('.klu-highlight');
+        const halo = klu.querySelector('::before');
 
-        klu.addEventListener('mousemove', e => {
-            const rect = klu.getBoundingClientRect();
+        hero.addEventListener('mousemove', e => {
+            const rect = hero.getBoundingClientRect();
             const x = ((e.clientX - rect.left) / rect.width) * 100;
             const y = ((e.clientY - rect.top) / rect.height) * 100;
             hero.style.setProperty('--x', `${x}%`);
             hero.style.setProperty('--y', `${y}%`);
+            klu.classList.add('active');
+        });
+
+        hero.addEventListener('mouseleave', () => {
+            hero.style.setProperty('--x', `50%`);
+            hero.style.setProperty('--y', `50%`);
+            klu.classList.remove('active');
         });
     </script>
+
 </body>
 </html>
