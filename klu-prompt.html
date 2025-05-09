@@ -3,57 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Submit a Prompt – Novexus</title>
-  <link rel="icon" href="Cube.png" />
+  <title>Share Your Approach – Novexus</title>
+
+  <link rel="icon" type="image/png" href="Cube.png" sizes="32x32"/>
+  <link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+  <link rel="manifest" href="site.webmanifest"/>
+
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       background-color: #f4f4f9;
-      margin: 0;
-      padding: 90px 20px 40px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       color: #333;
+      padding: 40px 20px;
     }
 
     .container {
-      max-width: 600px;
+      max-width: 900px;
       margin: 0 auto;
-      background: #fff;
-      padding: 40px 30px;
+      background-color: #f6f1eb;
       border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      padding: 60px 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     }
 
-    h1 {
+    h2 {
       font-size: 2em;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     p {
+      font-size: 1.1em;
       margin-bottom: 30px;
-      line-height: 1.6;
+      max-width: 700px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
     }
 
     input, textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0 20px;
+      font-size: 1em;
+      padding: 10px;
       border: 1px solid #ddd;
       border-radius: 10px;
-      font-size: 1em;
+      width: 100%;
     }
 
     input[type="file"] {
       padding: 10px;
+      background-color: #fff;
+      border: 1px dashed #ccc;
     }
 
     button {
-      padding: 12px 24px;
+      padding: 10px 20px;
       background-color: #007bff;
-      color: #fff;
+      color: white;
+      font-weight: bold;
       border: none;
       border-radius: 10px;
-      font-size: 1em;
       cursor: pointer;
+      width: fit-content;
     }
 
     button:hover {
@@ -61,27 +73,44 @@
     }
 
     footer {
+      background-color: #fff;
+      color: #333;
       text-align: center;
+      padding: 20px;
+      border-radius: 20px;
       margin-top: 40px;
-      font-size: 0.9em;
-      color: #777;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    footer a {
+      color: #007aff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Share Your Design Prompt</h1>
-    <p>How would you tell an AI like KLU to design something? Describe it your way — and optionally upload a sketch or reference file. This helps us improve how KLU understands real-world prompts.</p>
-    <form action="https://formspree.io/f/xbloyrag" method="POST" enctype="multipart/form-data">
+    <h2>Share Your Design Approach</h2>
+    <p>Thank you for helping us build something smarter. Please describe how you would prompt KLU to design something, and feel free to upload a drawing, sketch, or example. We welcome all styles and formats!</p>
+
+    <form action="https://formspree.io/f/xgvkzebr" method="POST" enctype="multipart/form-data">
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="prompt" rows="5" placeholder="Describe your design idea or how you'd prompt KLU..." required></textarea>
-      <input type="file" name="attachment" accept=".png,.jpg,.jpeg,.pdf,.svg,.webp,.heic" />
-      <button type="submit">Submit Prompt</button>
+      <textarea name="prompt" rows="5" placeholder="Describe how you would prompt KLU to design something..." required></textarea>
+      <input type="file" name="attachment" accept=".png,.jpg,.jpeg,.pdf,.webp" />
+      <button type="submit" style="padding: 10px 20px; background-color: #007bff; color: #fff; border: none; border-radius: 10px; cursor: pointer; font-size: 1em;">Submit</button>
     </form>
   </div>
+
   <footer>
-    <p>© 2025 Novexus. Thank you for helping us build something smarter.</p>
+    <p><img src="Cube.png" alt="Novexus Trademark" style="width: 24px; vertical-align: middle; margin-right: 5px;"> © 2025 Novexus. All rights reserved. | <a href="https://github.com/jwkos/Novexus-KLU">GitHub</a></p>
   </footer>
 </body>
 </html>
