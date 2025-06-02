@@ -99,12 +99,12 @@ section {
   }
 }
 
-section:nth-of-type(even) {
+section:nth-of-type(even):not(.carousel-wrapper) {
 background-color: #ffffff;
 }
 
-section:nth-of-type(odd) {
-background-color: #f6f1eb;
+section:nth-of-type(odd):not(.carousel-wrapper) {
+  background-color: #f6f1eb;
 }
 
 section h2 {
@@ -251,7 +251,6 @@ margin: 0 auto;
 }
 
 .contact input, .contact textarea {
-background-color: #f6f1eb;
 width: 100%;
 padding: 10px;
 margin: 10px 0;
@@ -425,13 +424,13 @@ left: 20px;
 right: 20px;
 }
 
-/* Force full bleed on carousel wrapper */
 .carousel-wrapper {
-    margin: 0;
-    padding: 0;
-    border-radius: 0;
-    background: none;
-    box-shadow: none;
+  margin: 20px auto;
+  max-width: 900px;
+  padding: 0;
+  border-radius: 20px;
+  background: none;
+  box-shadow: none;
 }
 
 .slide-image {
@@ -451,14 +450,14 @@ right: 20px;
   justify-content: center;
   gap: 14px;
   position: relative;
-  z-index: 3;
+  padding: 100px 0; /* increased from 60px */
 }
 
 .klu-text {
-    font-size: 2em;
-    font-weight: 600;
-    color: #555;
-    z-index: 2;
+  font-size: 2em;
+  font-weight: 600;
+  color: #ccc; /* soft light grey */
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.4); /* gives it glow/depth */
 }
 
 .tron-loader.behind {
@@ -530,4 +529,13 @@ right: 20px;
   backdrop-filter: blur(6px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .carousel-wrapper,
+  footer {
+    margin-left: 16px;
+    margin-right: 16px;
+    border-radius: 24px;
+  }
 }
