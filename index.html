@@ -168,13 +168,26 @@
         });
     </script>
     <script>
-        // Fix grid animation not showing on page reload
-        window.addEventListener('load', () => {
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                void hero.offsetWidth; // force repaint
-                hero.style.zIndex = '1';
+        window.addEventListener("load", () => {
+        // Force repaint of .hero::before and .animated-grid-card::before
+        const forceRepaint = (selector) => {
+            const el = document.querySelector(selector);
+            if (el) {
+            void el.offsetHeight; // force layout
+            el.style.animation = "none";
+            el.offsetHeight; // reflow
+            el.style.animation = ""; // restart animation
             }
+        };
+
+        // Restart both grid backgrounds
+        document.querySelectorAll(".animated-grid-card").forEach(card => {
+            forceRepaint(card);
+        });
+
+        document.querySelectorAll(".hero").forEach(hero => {
+            forceRepaint(hero);
+        });
         });
     </script>
 
