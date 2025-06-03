@@ -178,6 +178,25 @@
             }
         });
     </script>
+    <script>
+        window.addEventListener('load', () => {
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            hero.style.display = 'none';
+            // Force repaint
+            void hero.offsetWidth;
+            hero.style.display = '';
+        }
+
+        // Also re-trigger animation on first carousel slide if needed
+        const gridCard = document.querySelector('.animated-grid-card');
+        if (gridCard) {
+            gridCard.classList.remove('animated-grid-card');
+            void gridCard.offsetWidth;
+            gridCard.classList.add('animated-grid-card');
+        }
+        });
+    </script>
 
 </body>
 </html>

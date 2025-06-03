@@ -504,8 +504,12 @@ right: 20px;
 }
 
 .logo-icon {
-  height: 48px;
-  width: 48px;
+  height: 40px; /* or whatever smaller size works visually */
+  width: auto;  /* preserve cube proportions */
+  object-fit: contain; /* safe fallback */
+  display: inline-block;
+  margin: 0; /* ensure no unexpected spacing */
+  padding: 0;
   z-index: 1;
   filter: drop-shadow(0 0 6px rgba(0, 255, 255, 0.4));
   animation: glowPulse 2.5s ease-in-out infinite;
