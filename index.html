@@ -177,19 +177,6 @@
             }
         });
     </script>
-    <script>
-        window.addEventListener("load", () => {
-            const hero = document.querySelector(".hero::before");
-            const carousel = document.querySelector(".animated-grid-card::before");
-
-            // Trigger repaint
-            if (hero) void hero.offsetHeight;
-            if (carousel) void carousel.offsetHeight;
-
-            document.body.classList.remove("preload");
-            document.body.offsetHeight; // force reflow
-        });
-    </script>
 
 </body>
 </html>
