@@ -65,8 +65,7 @@
     <!-- MVP Section -->
     <section class="mvp" id="mvp">
         <h2>Our MVP</h2>
-        <p>Details coming soon.</p>
-        <p>See images below!</p>
+        <p>Details coming soon - see images below.</p>
     </section>
 
     <!-- MVP Carousel -->
@@ -179,22 +178,16 @@
         });
     </script>
     <script>
-        window.addEventListener('load', () => {
-        const hero = document.querySelector('.hero');
-        if (hero) {
-            hero.style.display = 'none';
-            // Force repaint
-            void hero.offsetWidth;
-            hero.style.display = '';
-        }
+        window.addEventListener("load", () => {
+            const hero = document.querySelector(".hero::before");
+            const carousel = document.querySelector(".animated-grid-card::before");
 
-        // Also re-trigger animation on first carousel slide if needed
-        const gridCard = document.querySelector('.animated-grid-card');
-        if (gridCard) {
-            gridCard.classList.remove('animated-grid-card');
-            void gridCard.offsetWidth;
-            gridCard.classList.add('animated-grid-card');
-        }
+            // Trigger repaint
+            if (hero) void hero.offsetHeight;
+            if (carousel) void carousel.offsetHeight;
+
+            document.body.classList.remove("preload");
+            document.body.offsetHeight; // force reflow
         });
     </script>
 
