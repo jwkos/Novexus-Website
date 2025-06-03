@@ -425,6 +425,9 @@ right: 20px;
 }
 
 .carousel-wrapper {
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: #0f223a; /* ensure it matches grid */
   margin: 20px auto;
   max-width: 900px;
   padding: 0;
@@ -484,6 +487,7 @@ right: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); /* match Novexus */
 }
 
 .animated-grid-card::before {
