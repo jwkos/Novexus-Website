@@ -545,13 +545,13 @@ right: 20px;
 }
 
 .klu-frosted-backdrop {
-  background: radial-gradient(circle, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.1));
-  padding: 30px 60px;
-  border-radius: 20px;
-  backdrop-filter: blur(12px);
-  display: flex;
-  align-items: center;
+  display: inline-flex;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  z-index: 1;
+  align-items: center;
+  padding: 6px 16px;
+  border-radius: 20px;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.1));
+  backdrop-filter: blur(6px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
 }
+
