@@ -163,7 +163,7 @@ z-index: 1;
 display: inline-flex;
 justify-content: center;
 align-items: center;
-padding: 6px 16px;
+padding: 6px 10px;
 border-radius: 20px;
 background: radial-gradient(circle at center, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.1));
 backdrop-filter: blur(6px);
