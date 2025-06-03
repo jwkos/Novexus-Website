@@ -548,14 +548,15 @@ right: 20px;
   }
 }
 
-.klu-frosted-backdrop {
+klu-frosted-backdrop {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 6px 16px;
+  padding: 40px 60px; /* Controls full block size */
   border-radius: 20px;
   background: radial-gradient(circle at center, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.1));
   backdrop-filter: blur(6px);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  z-index: 2;
 }
 
