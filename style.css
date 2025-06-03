@@ -451,16 +451,17 @@ right: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 24px;
   position: relative;
   padding: 100px;
 }
 
 .klu-text {
-  font-size: 2em;
+  font-size: 3em;
   font-weight: 600;
   color: #ccc; /* soft light grey */
   text-shadow: 0 0 4px rgba(0, 0, 0, 0.4); /* gives it glow/depth */
+  z-index: 1;
 }
 
 .tron-loader.behind {
@@ -504,7 +505,7 @@ right: 20px;
 }
 
 .logo-icon {
-  height: 40px; /* or whatever smaller size works visually */
+  height: 64px; /* or whatever smaller size works visually */
   width: auto;  /* preserve cube proportions */
   object-fit: contain; /* safe fallback */
   display: inline-block;
@@ -548,14 +549,14 @@ right: 20px;
   }
 }
 
-klu-frosted-backdrop {
+.klu-frosted-backdrop {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 60px; /* Controls full block size */
-  border-radius: 20px;
-  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.1));
-  backdrop-filter: blur(6px);
+  padding: 50px 80px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.08); /* softer frost */
+  backdrop-filter: blur(10px);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
   z-index: 2;
 }
