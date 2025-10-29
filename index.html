@@ -1,193 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preload" href="Cube.png" as="image" type="image/png">
-    <script>
-        if (window.location.hostname === "jwkos.github.io") {
-          window.location.href = "https://www.novexus.net";
-        }
-    </script>      
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novexus</title>
-
-    <link rel="icon" type="image/png" href="Cube.png" sizes="32x32">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest">
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Novexus</title>
+  <meta name="description" content="Novexus — building KLU, an AI-driven assembly & layout assistant powered by STEP/CAD kernels and precise connection logic." />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Icons: use all available -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/Cube.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/Novexus_cropped_icon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 </head>
 <body>
-    <header class="nav-bar" id="navbar">
-        <button class="nav-toggle" onclick="document.getElementById('navbar').classList.toggle('expanded')">
-            <img src="Cube.png" alt="Logo" class="nav-logo">
-        </button>
-        <ul class="nav-menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#novexus">Novexus</a></li>
-            <li><a href="#other">Other</a></li>
+  <div class="grid-wrap" aria-hidden="true"><div class="grid"></div></div>
+
+  <header class="nav">
+    <a class="brand" href="#top">
+      <img src="/Cube.png" alt="Novexus cube icon" />
+      <span class="wordmark">Novexus</span>
+    </a>
+    <nav class="links">
+      <a href="#klu">KLU</a>
+      <a href="#tech">Technology</a>
+      <a href="#status">Status</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div>
+        <h1 class="reveal">Build better assemblies with AI.</h1>
+        <p class="reveal" style="transition-delay:.06s">Novexus is developing <span class="mono">KLU</span> — an AI‑assisted assembly and layout engine. It understands parts and how they connect, plans placements with spatial awareness, and exports precise CAD outputs.</p>
+        <div class="cta reveal" style="transition-delay:.12s">
+          <a class="btn primary" href="#klu">Learn about KLU</a>
+          <a class="btn" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <aside class="card reveal" style="transition-delay:.18s">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <img src="/Novexus_cropped_icon.png" alt="Novexus logo" style="height:36px; filter: drop-shadow(0 0 12px rgba(102,224,255,.25));"/>
+          <span class="badge">Active development</span>
+        </div>
+        <div class="stat">
+          <span class="badge">Pipeline</span>
+          <span>STEP is source‑of‑truth; web preview with GLB. CadQuery/OpenCASCADE for constraints, faces, and export.</span>
+          <span class="badge">Focus</span>
+          <span>Face‑to‑face mating, snapping/connection validation, overlap detection, and iterative refinement.</span>
+          <span class="badge">Status</span>
+          <span>Private demo; not shipped publicly yet.</span>
+        </div>
+      </aside>
+    </section>
+
+    <section id="klu">
+      <span class="pill-title">What is KLU?</span>
+      <h2 class="h2">An AI that knows how parts connect</h2>
+      <p class="lead">KLU turns intent ("stack two boxes", "mount bracket to panel") into precise assembly plans. It proposes placements, then validates them using a CAD kernel — avoiding floating parts and enforcing realistic connections.</p>
+
+      <div class="features">
+        <div class="feature reveal">
+          <h3>Spatial planning</h3>
+          <p>Understands scene layout and available faces before placing parts. Plans holistically rather than step‑by‑step.</p>
+        </div>
+        <div class="feature reveal" style="transition-delay:.06s">
+          <h3>Connection logic</h3>
+          <p>Face/edge/point awareness with snapping and mating rules. Designed to prevent overlap and enforce constraints.</p>
+        </div>
+        <div class="feature reveal" style="transition-delay:.12s">
+          <h3>CAD‑first outputs</h3>
+          <p>STEP is the ground truth for accuracy. Web previews leverage GLB for speed; exports target real assemblies.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="tech" class="grid-2">
+      <div class="card reveal">
+        <span class="pill-title">Architecture</span>
+        <h3 class="h2" style="margin-top:6px">Precise by design</h3>
+        <ul class="list">
+          <li>Interpreter maps natural language to structured part actions.</li>
+          <li>Parts resolved from a catalog (STEP). Geometry informs constraints.</li>
+          <li>Validation checks snapping, floating elements, and collision/overlap.</li>
+          <li>Autoregressive revision fixes flagged placements before output.</li>
         </ul>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-inner">
-            <div class="logo-halo">
-                <img src="Novexus_cropped_icon.png" alt="Novexus-KLU Logo" class="novexus-logo">
-            </div>
-            <div class="klu-highlight">
-                <h1>KLU</h1>
-                <p>Details coming soon.</p>
-                <a href="#mvp">Learn More</a>
-            </div>
-        </div>
+      </div>
+      <div class="card reveal" style="transition-delay:.06s">
+        <span class="pill-title">For companies</span>
+        <h3 class="h2" style="margin-top:6px">Flexible integration</h3>
+        <ul class="list">
+          <li>License the engine; bring your catalog of parts.</li>
+          <li>Train intent on your domain; keep your data private.</li>
+          <li>Target use‑cases: assembly planning, instruction generation, and layout exploration.</li>
+          <li>Export real CAD assemblies for downstream workflows.</li>
+        </ul>
+      </div>
     </section>
 
-
-
-    <!-- About Section -->
-    <section class="about" id="novexus">
-        <h2>About Us</h2>
-        <p>Novexus is a forward-thinking software company building advanced design and automation tools. Our mission is to unlock a smarter future for physical product development through clean, intuitive software. We specialize in modular, constraint-driven systems that empower users to move seamlessly from concept to creation — no matter their background or technical level.</p>
-        <p>More information coming soon.</p>
+    <section id="status" class="grid-2">
+      <div class="card reveal">
+        <span class="pill-title">Current focus</span>
+        <h3 class="h2" style="margin-top:6px">Roadmap highlights</h3>
+        <ul class="list">
+          <li>Finalize connection/mating logic (faces/edges; concentric fits later).</li>
+          <li>Robust overlap detection with revision loop.</li>
+          <li>Stricter output schema for direct transform emission.</li>
+          <li>Memory modes for iterative design sessions.</li>
+        </ul>
+      </div>
+      <div class="card reveal" style="transition-delay:.06s">
+        <span class="pill-title">Notes</span>
+        <h3 class="h2" style="margin-top:6px">What to expect</h3>
+        <ul class="list">
+          <li>KLU is in active development; public access is not yet available.</li>
+          <li>Novexus owns <span class="mono">novexus.net</span>. Planning for <span class="mono">klu.ai</span>.</li>
+          <li>Demo uses geometric parts for clarity while STEP drives precision.</li>
+        </ul>
+      </div>
     </section>
 
-    <!-- KLU User Prompt Section -->
-    <section class="kluprompt">
-        <h2>Want to help us out?</h2>
-        <p>Designers express ideas in countless ways — KLU wants to learn from your style. Show it how you describe your designs.</p>
-        <div style="text-align: center;">
-            <a href="klu-prompt.html" style="display:inline-block; padding:10px 20px; background:#007bff; color:white; text-decoration:none; border-radius:10px; font-weight:bold;">Share Your Approach</a>
+    <section id="contact">
+      <div class="card reveal" style="display:grid; gap:12px;">
+        <span class="pill-title">Contact</span>
+        <h3 class="h2" style="margin-top:6px">Say hello</h3>
+        <p class="lead">We collaborate with teams exploring AI‑assisted assembly and layout. If you’re interested in pilots or have relevant catalogs, reach out.</p>
+        <div>
+          <a class="btn primary" href="mailto:info@novexus.net">info@novexus.net</a>
         </div>
+      </div>
     </section>
+  </main>
 
-    <!-- MVP Section -->
-    <section class="mvp" id="mvp">
-        <h2>Our MVP</h2>
-        <p>Details coming soon — see images below.</p>
-    </section>
-
-    <!-- MVP Carousel -->
-    <div class="carousel-wrapper">
-    <div class="carousel-container clean-carousel">
-        <button class="carousel-arrow left" onclick="prevSlide()">&#10094;</button>
-        <div class="carousel-slide" id="carousel">
-        
-        <!-- Slide 1: KLU Logo + Grid + Frosted Halo -->
-        <div class="carousel-item active">
-            <div class="carousel-card animated-grid-card">
-                <div class="logo-klu-combo">
-                    <img src="Cube.png" alt="Cube Logo" class="logo-icon" />
-                    <span class="klu-text">KLU</span>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- Slide 2 -->
-        <div class="carousel-item">
-            <div class="carousel-card">
-                <img src="Spiral.png" alt="Spiral" class="slide-image">
-            </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="carousel-item">
-            <div class="carousel-card">
-                <img src="MenuBarOpen.png" alt="Menu Bar" class="slide-image">
-            </div>
-        </div>
-
-        </div>
-        <button class="carousel-arrow right" onclick="nextSlide()">&#10095;</button>
+  <footer>
+    <div class="footer-grid">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <img src="/Cube.png" alt="Novexus" style="width:22px; height:22px; opacity:.9" />
+        <strong>Novexus</strong>
+      </div>
+      <div>
+        <a class="btn" href="#top" aria-label="Back to top">Back to top ↑</a>
+      </div>
     </div>
-    </div>
+    <div style="margin-top:14px">© <span id="year"></span> Novexus. All rights reserved.</div>
+  </footer>
 
-    <!-- Contact Section -->
-    <section class="contact">
-        <h2>Get in Touch</h2>
-        <p>We’re working on something exciting. Stay tuned!</p>
-        <form action="https://formspree.io/f/xbloyrag" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-            <button type="submit">Submit</button>
-        </form>
-    </section>
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    <!-- Footer -->
-    <footer>
-        <p><img src="Cube.png" alt="Novexus Trademark" style="width: 24px; vertical-align: middle; margin-right: 5px;"> © 2025 Novexus. All rights reserved. | <a href="https://github.com/jwkos/Novexus-KLU">GitHub</a></p>
-    </footer>
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel-item');
+    // Tiny scroll-in reveal
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show');});
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.toggle('active', i === index);
-            });
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        showSlide(currentSlide);
-    </script>
-
-    <script>
-        const klu = document.querySelector('.klu-highlight');
-
-        function updateLight(e) {
-            const rect = klu.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            klu.style.setProperty('--x', `${x}px`);
-            klu.style.setProperty('--y', `${y}px`);
-        }
-
-        klu.addEventListener('mouseenter', () => {
-            klu.classList.add('active');
-        });
-
-        klu.addEventListener('mousemove', updateLight);
-
-        klu.addEventListener('mouseleave', () => {
-            klu.classList.remove('active');
-            // Don’t reset x/y — leave them alone to avoid jump glitch
-        });
-    </script>
-    <script>
-        window.addEventListener("load", () => {
-        // Force repaint of .hero::before and .animated-grid-card::before
-        const forceRepaint = (selector) => {
-            const el = document.querySelector(selector);
-            if (el) {
-            void el.offsetHeight; // force layout
-            el.style.animation = "none";
-            el.offsetHeight; // reflow
-            el.style.animation = ""; // restart animation
-            }
-        };
-
-        // Restart both grid backgrounds
-        document.querySelectorAll(".animated-grid-card").forEach(card => {
-            forceRepaint(card);
-        });
-
-        document.querySelectorAll(".hero").forEach(hero => {
-            forceRepaint(hero);
-        });
-        });
-    </script>
-
+    // Subtle 3D tilt for hero card
+    const tilt = document.querySelector('.hero .card');
+    if (tilt) {
+      const rect = tilt.getBoundingClientRect();
+      const cx = rect.left + rect.width/2, cy = rect.top + rect.height/2;
+      window.addEventListener('mousemove', (e)=>{
+        const dx = (e.clientX - cx) / rect.width;
+        const dy = (e.clientY - cy) / rect.height;
+        tilt.style.transform = `rotateX(${(-dy*6).toFixed(2)}deg) rotateY(${(dx*6).toFixed(2)}deg)`;
+      });
+      window.addEventListener('mouseleave', ()=>{ tilt.style.transform = 'rotateX(0) rotateY(0)'; });
+    }
+  </script>
 </body>
 </html>
