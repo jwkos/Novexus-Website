@@ -1,173 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Novexus</title>
-  <meta name="description" content="Novexus — building KLU, an AI-driven assembly & layout assistant powered by STEP/CAD kernels and precise connection logic." />
-  <link rel="stylesheet" href="style.css" />
-  <!-- Icons: use all available -->
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/Cube.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="/Novexus_cropped_icon.png" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Novexus | Home</title>
+<meta name="description" content="NOVEXUS is building KLU — assembly intelligence that understands how parts fit and connect, validating constraints and exporting real engineering formats."/>
+<link rel="stylesheet" href="style.css" />
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
 </head>
 <body>
-  <div class="grid-wrap" aria-hidden="true"><div class="grid"></div></div>
-
-  <header class="nav">
-    <a class="brand" href="#top">
-      <img src="/Cube.png" alt="Novexus cube icon" />
-      <span class="wordmark">Novexus</span>
-    </a>
-    <nav class="links">
-      <a href="#klu">KLU</a>
-      <a href="#tech">Technology</a>
-      <a href="#status">Status</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <main id="top">
-    <section class="hero">
-      <div>
-        <h1 class="reveal">Build better assemblies with AI.</h1>
-        <p class="reveal" style="transition-delay:.06s">Novexus is developing <span class="mono">KLU</span> — an AI‑assisted assembly and layout engine. It understands parts and how they connect, plans placements with spatial awareness, and exports precise CAD outputs.</p>
-        <div class="cta reveal" style="transition-delay:.12s">
-          <a class="btn primary" href="#klu">Learn about KLU</a>
-          <a class="btn" href="#contact">Get in touch</a>
-        </div>
-      </div>
-      <aside class="card reveal" style="transition-delay:.18s">
-        <div style="display:flex; align-items:center; gap:12px;">
-          <img src="/Novexus_cropped_icon.png" alt="Novexus logo" style="height:36px; filter: drop-shadow(0 0 12px rgba(102,224,255,.25));"/>
-          <span class="badge">Active development</span>
-        </div>
-        <div class="stat">
-          <span class="badge">Pipeline</span>
-          <span>STEP is source‑of‑truth; web preview with GLB. CadQuery/OpenCASCADE for constraints, faces, and export.</span>
-          <span class="badge">Focus</span>
-          <span>Face‑to‑face mating, snapping/connection validation, overlap detection, and iterative refinement.</span>
-          <span class="badge">Status</span>
-          <span>Private demo; not shipped publicly yet.</span>
-        </div>
-      </aside>
-    </section>
-
-    <section id="klu">
-      <span class="pill-title">What is KLU?</span>
-      <h2 class="h2">An AI that knows how parts connect</h2>
-      <p class="lead">KLU turns intent ("stack two boxes", "mount bracket to panel") into precise assembly plans. It proposes placements, then validates them using a CAD kernel — avoiding floating parts and enforcing realistic connections.</p>
-
-      <div class="features">
-        <div class="feature reveal">
-          <h3>Spatial planning</h3>
-          <p>Understands scene layout and available faces before placing parts. Plans holistically rather than step‑by‑step.</p>
-        </div>
-        <div class="feature reveal" style="transition-delay:.06s">
-          <h3>Connection logic</h3>
-          <p>Face/edge/point awareness with snapping and mating rules. Designed to prevent overlap and enforce constraints.</p>
-        </div>
-        <div class="feature reveal" style="transition-delay:.12s">
-          <h3>CAD‑first outputs</h3>
-          <p>STEP is the ground truth for accuracy. Web previews leverage GLB for speed; exports target real assemblies.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="tech" class="grid-2">
-      <div class="card reveal">
-        <span class="pill-title">Architecture</span>
-        <h3 class="h2" style="margin-top:6px">Precise by design</h3>
-        <ul class="list">
-          <li>Interpreter maps natural language to structured part actions.</li>
-          <li>Parts resolved from a catalog (STEP). Geometry informs constraints.</li>
-          <li>Validation checks snapping, floating elements, and collision/overlap.</li>
-          <li>Autoregressive revision fixes flagged placements before output.</li>
-        </ul>
-      </div>
-      <div class="card reveal" style="transition-delay:.06s">
-        <span class="pill-title">For companies</span>
-        <h3 class="h2" style="margin-top:6px">Flexible integration</h3>
-        <ul class="list">
-          <li>License the engine; bring your catalog of parts.</li>
-          <li>Train intent on your domain; keep your data private.</li>
-          <li>Target use‑cases: assembly planning, instruction generation, and layout exploration.</li>
-          <li>Export real CAD assemblies for downstream workflows.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="status" class="grid-2">
-      <div class="card reveal">
-        <span class="pill-title">Current focus</span>
-        <h3 class="h2" style="margin-top:6px">Roadmap highlights</h3>
-        <ul class="list">
-          <li>Finalize connection/mating logic (faces/edges; concentric fits later).</li>
-          <li>Robust overlap detection with revision loop.</li>
-          <li>Stricter output schema for direct transform emission.</li>
-          <li>Memory modes for iterative design sessions.</li>
-        </ul>
-      </div>
-      <div class="card reveal" style="transition-delay:.06s">
-        <span class="pill-title">Notes</span>
-        <h3 class="h2" style="margin-top:6px">What to expect</h3>
-        <ul class="list">
-          <li>KLU is in active development; public access is not yet available.</li>
-          <li>Novexus owns <span class="mono">novexus.net</span>. Planning for <span class="mono">klu.ai</span>.</li>
-          <li>Demo uses geometric parts for clarity while STEP drives precision.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="card reveal" style="display:grid; gap:12px;">
-        <span class="pill-title">Contact</span>
-        <h3 class="h2" style="margin-top:6px">Say hello</h3>
-        <p class="lead">We collaborate with teams exploring AI‑assisted assembly and layout. If you’re interested in pilots or have relevant catalogs, reach out.</p>
-        <div>
-          <a class="btn primary" href="mailto:info@novexus.net">info@novexus.net</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-grid">
-      <div style="display:flex; align-items:center; gap:10px;">
-        <img src="/Cube.png" alt="Novexus" style="width:22px; height:22px; opacity:.9" />
-        <strong>Novexus</strong>
-      </div>
-      <div>
-        <a class="btn" href="#top" aria-label="Back to top">Back to top ↑</a>
-      </div>
-    </div>
-    <div style="margin-top:14px">© <span id="year"></span> Novexus. All rights reserved.</div>
-  </footer>
-
-  <script>
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Tiny scroll-in reveal
-    const obs = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show');});
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-
-    // Subtle 3D tilt for hero card
-    const tilt = document.querySelector('.hero .card');
-    if (tilt) {
-      const rect = tilt.getBoundingClientRect();
-      const cx = rect.left + rect.width/2, cy = rect.top + rect.height/2;
-      window.addEventListener('mousemove', (e)=>{
-        const dx = (e.clientX - cx) / rect.width;
-        const dy = (e.clientY - cy) / rect.height;
-        tilt.style.transform = `rotateX(${(-dy*6).toFixed(2)}deg) rotateY(${(dx*6).toFixed(2)}deg)`;
-      });
-      window.addEventListener('mouseleave', ()=>{ tilt.style.transform = 'rotateX(0) rotateY(0)'; });
+<div class="bg-grad" aria-hidden="true"></div>
+<div class="wireframe" aria-hidden="true">
+<svg viewBox="0 0 100 100" preserveAspectRatio="none">
+<defs>
+<pattern id="wf" width="10" height="10" patternUnits="userSpaceOnUse">
+<path d="M0,10 L10,0 M-5,5 L5,15 M5,-5 L15,5" stroke="#cfefff" stroke-width="0.25" opacity="0.35"/>
+</pattern>
+<mask id="fade">
+<linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="white" stop-opacity="0.2"/>
+<stop offset="40%" stop-color="white" stop-opacity=".25"/>
+<stop offset="75%" stop-color="white" stop-opacity=".1"/>
+<stop offset="100%" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<rect x="0" y="0" width="100" height="100" fill="url(#g)"/>
+</mask>
+</defs>
+<rect x="0" y="0" width="100" height="100" fill="url(#wf)" mask="url(#fade)"/>
+</svg>
+</div>
+<div class="sunrise" id="sunrise" aria-hidden="true"></div>
+<canvas id="lc" aria-hidden="true"></canvas>
+<header>
+<div class="wrap nav">
+<a href="#top" class="brand" aria-label="NOVEXUS home">
+<img src="Novexus White Logo-BackgroundRemover copy.png" alt="NOVEXUS" onerror="this.style.display='none'" style="height: clamp(26px, 3.25vw, 41.6px); width: auto;">
+</a>
+<nav>
+<a href="#klu">KLU</a>
+<a href="#status">Status</a>
+<a href="#contact">Contact</a>
+</nav>
+</div>
+</header>
+<main id="top">
+<section class="hero wrap">
+<div class="kicker">Assembly Intelligence</div>
+<h1>Design, delivered at the speed of parts.</h1>
+<p class="lead">KLU turns your intent into assemblies built from existing components. Because the parts already exist, you get a real design you can validate and order immediately.</p>
+<div class="cta">
+<a class="link" href="#klu">Explore KLU</a>
+<a class="link" href="#contact">Contact</a>
+</div>
+</section>
+<div class="spacer"></div>
+<section id="klu" class="wrap">
+<h2>KLU</h2>
+<p>KLU works <em>after</em> part design. Teams bring their catalogs (ideally STEP with metadata). KLU understands valid connections, places parts in 3D space, checks constraints, and exports assemblies suitable for inspection, simulation, or manufacturing.</p>
+<ul>
+<li><strong>Catalog awareness.</strong> Canonical part mapping and connection semantics for consistent pick-place-connect.</li>
+<li><strong>Constraint-checked placement.</strong> AI proposes; CAD-kernel logic validates mates and blocks unintended overlap or float.</li>
+<li><strong>STEP-first exports.</strong> ISO-10303 assemblies with precise transforms and IDs.</li>
+<li><strong>Instructions &amp; BOM (roadmap).</strong> Assembly steps and part lists are planned; we publish progress as it happens.</li>
+</ul>
+</section>
+<div class="spacer"></div>
+<section id="status" class="wrap">
+<h2>Status</h2>
+<ul>
+<li><strong>Aug 28, 2025:</strong> STEP-only checkpoint. Legacy GLB removed; FastAPI with CORS; endpoints for interpretation, resolve-part, floating-part checks, memory snapshots, and STEP export.</li>
+<li><strong>Catalog auto-discover:</strong> <code>.step/.stp</code> files register automatically — no manual JSON mapping.</li>
+<li><strong>Assembly export:</strong> Single and multi-part assemblies built with CadQuery using per-part transforms and exported as real STEP.</li>
+<li><strong>Next:</strong> Face/edge mating, constraint-based snapping, stricter output schema for direct transforms, then memory modes.</li>
+</ul>
+</section>
+<div class="spacer"></div>
+<section id="contact" class="wrap">
+<h2>Contact</h2>
+<p>Email <a class="link" href="mailto:info@novexus.net">info@novexus.net</a> to discuss licensing and implementation.</p>
+</section>
+</main>
+<footer>
+<div class="wrap footer" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+<div style="display:flex;align-items:center;gap:.6rem">
+<img src="Novexus White Icon-BackgroundRemover.png" alt="NOVEXUS mark" height="40" onerror="this.style.display='none'">
+</div>
+<small>© <span id="year"></span> NOVEXUS. All rights reserved.</small>
+</div>
+</footer>
+<script>
+// Footer year
+document.getElementById('year').textContent = new Date().getFullYear();
+// Sunrise effect on contact visibility
+const sunrise = document.getElementById('sunrise');
+const contact = document.getElementById('contact');
+if (sunrise && contact && 'IntersectionObserver' in window) {
+const io = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+sunrise.classList.add('show');
+          } else {
+sunrise.classList.remove('show');
+          }
+        });
+      }, { threshold: .4 });
+io.observe(contact);
+    } else if (sunrise) {
+sunrise.classList.add('show');
     }
-  </script>
+// ── Light-cycle v19.1: FIX ReferenceError by initializing tunables before first draw ─────────
+    (function(){
+const cvs = document.getElementById('lc');
+if(!cvs) return; const ctx = cvs.getContext('2d');
+// ===== Tunables & constants FIRST (so any early calls see initialized values) =====
+const CELL=28;
+const SPEED=0.90;
+const DECAY=0.03; // ~3.5s fade for effect + trail
+const BASE_RGB=[170,176,186]; // baseline grid
+const BASE_ALPHA=0.10; // faint, always visible
+const EFFECT_RGB=[160,165,175]; // lit grid color
+const EFFECT_ALPHA=0.45; // brighter inside spotlight
+const LINE_W=0.5; // thin lines
+// Spotlight radii (small circle)
+const R_INNER= CELL*0.8; // full intensity
+const R_FADE_START = CELL*1.6; // start fade
+const R_FADE_END = CELL*3.2; // fully gone
+// ===== Layers =====
+const baseGrid = document.createElement('canvas'); // static faint grid (no fade)
+const bctx = baseGrid.getContext('2d');
+const effect = document.createElement('canvas'); // lit grid that decays to transparent
+const ectx = effect.getContext('2d');
+const trail = document.createElement('canvas'); // white cycle trail that decays
+const tctx = trail.getContext('2d');
+// ===== Helpers =====
+const snap=v=>Math.round(v/CELL)*CELL;
+const dirs=[[1,0],[0,1],[-1,0],[0,-1]];
+let dpr=1;
+function drawBaseGrid(){
+bctx.clearRect(0,0,baseGrid.width,baseGrid.height);
+bctx.lineWidth=LINE_W;
+bctx.strokeStyle = `rgba(${BASE_RGB[0]},${BASE_RGB[1]},${BASE_RGB[2]},${BASE_ALPHA})`;
+for(let x=snap(0); x<=baseGrid.width; x+=CELL){
+bctx.beginPath(); bctx.moveTo(x,0); bctx.lineTo(x,baseGrid.height); bctx.stroke();
+        }
+for(let y=snap(0); y<=baseGrid.height; y+=CELL){
+bctx.beginPath(); bctx.moveTo(0,y); bctx.lineTo(baseGrid.width,y); bctx.stroke();
+        }
+      }
+function resize(){
+dpr=Math.max(1,Math.min(2, devicePixelRatio||1));
+const w=Math.floor(innerWidth*dpr), h=Math.floor(innerHeight*dpr);
+cvs.width=w; cvs.height=h; cvs.style.width=innerWidth+'px'; cvs.style.height=innerHeight+'px';
+ctx.setTransform(1,0,0,1,0,0); ctx.scale(dpr,dpr);
+baseGrid.width=innerWidth; baseGrid.height=innerHeight; // CSS px
+effect.width=innerWidth; effect.height=innerHeight;
+trail.width=innerWidth; trail.height=innerHeight;
+drawBaseGrid(); // safe now: BASE_*, LINE_W, CELL are initialized above
+      }
+function addLitGrid(cx,cy){
+// 1) Fade existing effect layer toward transparent (so it disappears in ~3.5s)
+ectx.globalCompositeOperation='destination-out';
+ectx.fillStyle = `rgba(0,0,0,${DECAY})`;
+ectx.fillRect(0,0,effect.width,effect.height);
+ectx.globalCompositeOperation='source-over';
+// 2) Draw a bright grid into the effect layer and mask it to a soft circle
+const tmp = document.createElement('canvas');
+tmp.width=effect.width; tmp.height=effect.height; const g=tmp.getContext('2d');
+g.lineWidth=LINE_W; g.strokeStyle = `rgba(${EFFECT_RGB[0]},${EFFECT_RGB[1]},${EFFECT_RGB[2]},${EFFECT_ALPHA})`;
+for(let x=snap(0); x<=tmp.width; x+=CELL){ g.beginPath(); g.moveTo(x,0); g.lineTo(x,tmp.height); g.stroke(); }
+for(let y=snap(0); y<=tmp.height; y+=CELL){ g.beginPath(); g.moveTo(0,y); g.lineTo(tmp.width,y); g.stroke(); }
+const grad=g.createRadialGradient(cx,cy,Math.max(0,R_INNER-1), cx,cy, R_FADE_END);
+const s1=(R_FADE_START-R_INNER)/(R_FADE_END-R_INNER);
+grad.addColorStop(0,'rgba(0,0,0,1)'); grad.addColorStop(s1,'rgba(0,0,0,1)'); grad.addColorStop(1,'rgba(0,0,0,0)');
+g.globalCompositeOperation='destination-in';
+g.fillStyle=grad; g.fillRect(0,0,tmp.width,tmp.height);
+g.globalCompositeOperation='source-over';
+ectx.drawImage(tmp,0,0);
+      }
+function addTrail(px,py,x,y){
+// Fade old trail
+tctx.globalCompositeOperation='destination-out';
+tctx.fillStyle = `rgba(0,0,0,${DECAY})`;
+tctx.fillRect(0,0,trail.width,trail.height);
+tctx.globalCompositeOperation='source-over';
+// Draw new segment
+tctx.strokeStyle='rgba(255,255,255,0.98)';
+tctx.lineWidth=1.6; tctx.lineCap='round';
+tctx.shadowBlur=8; tctx.shadowColor='rgba(255,255,255,0.5)';
+tctx.beginPath(); tctx.moveTo(px,py); tctx.lineTo(x,y); tctx.stroke();
+tctx.shadowBlur=0;
+      }
+// Input targeting
+const prefersPointer = typeof matchMedia === 'function' && matchMedia('(pointer: fine)').matches;
+let target={x:innerWidth*0.6,y:innerHeight*0.4};
+let wanderTimer = null;
+if (prefersPointer) {
+addEventListener('pointermove',e=>{target.x=e.clientX;target.y=e.clientY});
+addEventListener('scroll',()=>{
+const progress = (document.body.scrollHeight - innerHeight) || 1;
+const ratio = scrollY / progress;
+target.y = innerHeight * (0.15 + 0.7 * ratio);
+        },{passive:true});
+      } else {
+const randomizeTarget = () => {
+target.x = innerWidth * (0.2 + Math.random() * 0.6);
+target.y = innerHeight * (0.2 + Math.random() * 0.6);
+        };
+randomizeTarget();
+wanderTimer = setInterval(randomizeTarget, 2200);
+addEventListener('visibilitychange', () => {
+if (document.hidden) {
+clearInterval(wanderTimer);
+          } else {
+randomizeTarget();
+wanderTimer = setInterval(randomizeTarget, 2200);
+          }
+        });
+      }
+// Cycle state
+let p={x:snap(innerWidth*0.3), y:snap(innerHeight*0.6)};
+let dir=0, stepLeft=0;
+function chooseTurn(){
+const dx=target.x-p.x, dy=target.y-p.y;
+const wantH=Math.abs(dx)>Math.abs(dy);
+const preferred=wantH ? (dx>0?0:2) : (dy>0?1:3);
+const back=(dir+2)&3; let opts=[preferred,(preferred+1)&3,(preferred+3)&3].filter(d=>d!==back);
+if(Math.random()<0.12) opts.reverse(); return opts[0]??dir;
+      }
+function frame(){
+// Move
+if(stepLeft<=0){ dir=chooseTurn(); stepLeft=CELL*(2+Math.floor(Math.random()*3)); }
+const px=p.x, py=p.y;
+const vx=dirs[dir][0]*SPEED, vy=dirs[dir][1]*SPEED;
+if(dir%2===0){ p.y=snap(p.y); p.x+=vx; } else { p.x=snap(p.x); p.y+=vy; }
+stepLeft-=SPEED;
+// Update lit grid + trail (both layers fade independently back to baseline)
+addLitGrid(p.x,p.y);
+addTrail(px,py,p.x,p.y);
+// Composite: clear, draw base grid (static), then effect and trail layers
+ctx.setTransform(1,0,0,1,0,0);
+ctx.clearRect(0,0,innerWidth,innerHeight);
+ctx.drawImage(baseGrid,0,0);
+ctx.drawImage(effect,0,0);
+ctx.drawImage(trail,0,0);
+requestAnimationFrame(frame);
+      }
+// Initialize AFTER constants exist
+resize();
+addEventListener('resize',resize);
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+requestAnimationFrame(frame);
+      }
+// --- Lightweight runtime checks ("tests") ---
+console.assert(typeof CELL==='number' && CELL>0, 'CELL must be a positive number');
+console.assert(baseGrid.width>0 && effect.width>0 && trail.width>0, 'Layers should be sized');
+addEventListener('beforeunload', () => { if (wanderTimer) clearInterval(wanderTimer); });
+    })();
+</script>
 </body>
 </html>
